@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+
 class ContainerBox extends StatelessWidget {
-  ContainerBox({required this.boxColor, required this.childWidget});
+  const ContainerBox(
+      {required this.boxColor, required this.childWidget, Key? key})
+      : super(key: key);
 
   final Color boxColor;
   final Widget childWidget;
@@ -9,7 +12,7 @@ class ContainerBox extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: childWidget,
-      margin: EdgeInsets.all(15.0),
+      margin: const EdgeInsets.all(15.0),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10.0),
         color: boxColor,
@@ -18,7 +21,7 @@ class ContainerBox extends StatelessWidget {
             color: Colors.grey.withOpacity(0.5),
             spreadRadius: 5.0,
             blurRadius: 7.0,
-            offset: Offset(0,3),
+            offset: const Offset(0, 3),
           ),
         ],
       ),
